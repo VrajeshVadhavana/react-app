@@ -11,7 +11,7 @@ app.get("/",(req,res)=>{
 app.post("/post",(req,res)=>{
     console.log(req.body)
     res.sendFile(__dirname+"/public/index.html");
-    mongodb.connect("mongodb://127.0.0.1:27017/").then((dbs)=>{
+    mongodb.connect("mongodb+srv://vrajesh:vrajesh2001@cluster0.gwhxuv9.mongodb.net/").then((dbs)=>{
         console.log("database conneted successfully");      
         var zz = dbs.db("new_d");  
         zz.collection("react").insertOne({Fullname:req.body.fname}).then(()=>{
